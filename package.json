@@ -1,0 +1,15 @@
+{
+  "name": "time-overlap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "JurungPark <jurung@pplink.net>",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "jasmine-spec-reporter": "^2.7.0"
+  }
+}
