@@ -24,6 +24,42 @@ function cross(a, b) {
   }
   return result;
 }
+function sum(a,b){
+  var result = [];
+  var a_open = false;
+  var b_open = false;
+  var a_pointer = -1;
+  var b_pointer = -1;
+  while(a_pointer < a.length && b_pointer < b.length){
+    // console.log('in while//','a.length:',a.length,'a_pointer:',a_pointer,'b.length:',b.length,'b_pointer:',b_pointer);
+    if (a[a_pointer + 1] == b[b_pointer + 1] && !b_open) { //for dot intersection
+      a_pointer++;
+      a_open = !a_open;
+      if (!b_open) a[a_pointer] && result.push(a[a_pointer]);
+    } else if (!b[b_pointer +1] || a[a_pointer + 1] < b[b_pointer + 1]) {
+      a_pointer++;
+      a_open = !a_open;
+      if (!b_open) a[a_pointer] && result.push(a[a_pointer]);
+    } else {
+      b_pointer++;
+      b_open = !b_open;
+      if (!a_open) b[b_pointer] && result.push(b[b_pointer]);
+    }
+  }
+  return result;
+}
+function sumAll(){
+  var result = [];
+  for(var i = 0; i<arguments.length;i++){
+    if(i===0){
+      result = arguments[i];
+    }else{
+      result = sum(result,arguments[i]);
+    }
+  }
+  return result;
+
+}
 function crossAll(){
   var result = [];
   for(var i = 0; i<arguments.length;i++){
@@ -46,8 +82,10 @@ function integrate(a) {
   return result;
 }
 exports.cross = cross;
-exports.integrate = integrate;
 exports.crossAll = crossAll;
+exports.sum = sum;
+exports.sumAll = sumAll;
+exports.integrate = integrate;
 
 
 
