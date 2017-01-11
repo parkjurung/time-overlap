@@ -26,7 +26,7 @@ timeOverlap.sum([1,3,5,7],[2,4,6,8]);   //return [1,4,5,8]
 //   1-----3     5-----7                //arg0
 //      2-----4     6-----8             //arg1 
 //==============================
-//   1--------4  5---------8            //result
+//   1--------4  5--------8            //result
 
 timeOverlap.crossAll(); 
 //same as cross(), but can receive multiple operand
