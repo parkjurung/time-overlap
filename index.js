@@ -52,7 +52,7 @@ function sumAll(){
   var result = [];
   for(var i = 0; i<arguments.length;i++){
     if(i===0){
-      result = arguments[i];
+      result = JSON.parse(JSON.stringify(arguments[i]));
     }else{
       result = sum(result,arguments[i]);
     }
@@ -64,7 +64,7 @@ function crossAll(){
   var result = [];
   for(var i = 0; i<arguments.length;i++){
     if(i===0){
-      result = arguments[i];
+      result = JSON.parse(JSON.stringify(arguments[i]));
     }else{
       result = cross(result,arguments[i]);
     }

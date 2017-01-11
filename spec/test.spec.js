@@ -17,9 +17,9 @@ var case3_b = [2, 6, 7, 11];
 var case3_c = [3, 8, 10];
 var case3_answer = [3, 4, 5, 6, 7, 8, 10, 11];
 var case3_sum_answer = [1];
-var case4_a = [1,3,4,6,8];
-var case4_b = [3,4,5,9];
-var case4_answer = [1,3,3,4,4];
+var case4_a = [1, 3, 4, 6, 8];
+var case4_b = [3, 4, 5, 9];
+var case4_answer = [1, 3, 3, 4, 4];
 
 describe("cross", function () {
   it('case1 should return case1_answer', function () {
@@ -38,22 +38,21 @@ describe("crossAll", function () {
     expect(crossAll(case3_a, case3_b, case3_c)).toEqual(case3_answer);
   });
   it('should be commutative', function () {
-      expect(crossAll(case3_c, case3_b, case3_a)).toEqual(case3_answer);
-      expect(crossAll(case3_a, case3_c, case3_b)).toEqual(case3_answer);
-      expect(crossAll(case3_c, case3_a, case3_b)).toEqual(case3_answer);
-      expect(crossAll(case3_b, case3_a, case3_c)).toEqual(case3_answer);
-      expect(crossAll(case3_b, case3_c, case3_a)).toEqual(case3_answer);
-    }
-  )
+    expect(crossAll(case3_c, case3_b, case3_a)).toEqual(case3_answer);
+    expect(crossAll(case3_a, case3_c, case3_b)).toEqual(case3_answer);
+    expect(crossAll(case3_c, case3_a, case3_b)).toEqual(case3_answer);
+    expect(crossAll(case3_b, case3_a, case3_c)).toEqual(case3_answer);
+    expect(crossAll(case3_b, case3_c, case3_a)).toEqual(case3_answer);
+  });
 });
 describe("sum", function () {
   it('cases should return proper answer', function () {
     expect(sum(case1_a, case1_b)).toEqual(case1_sum_answer);
     expect(sum(case2_a, case2_b)).toEqual(case2_sum_answer);
-    expect(sum(case1_a,case1_a)).toEqual(case1_a);
-    expect(sum(case1_b,case1_b)).toEqual(case1_b);
-    expect(sum(case2_a,case2_a)).toEqual(case2_a);
-    expect(sum(case4_a,case4_b)).toEqual(case4_answer);
+    expect(sum(case1_a, case1_a)).toEqual(case1_a);
+    expect(sum(case1_b, case1_b)).toEqual(case1_b);
+    expect(sum(case2_a, case2_a)).toEqual(case2_a);
+    expect(sum(case4_a, case4_b)).toEqual(case4_answer);
   });
   it('should be commutative', function () {
     expect(sum(case1_a, case1_b)).toEqual(sum(case1_b, case1_a));
