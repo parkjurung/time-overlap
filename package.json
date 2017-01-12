@@ -1,8 +1,13 @@
 {
   "name": "time-overlap",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "This module provides several useful functions to calculate timestamps(enter-exit,array-format) overlapping",
-  "keywords": ["timestamp","calculate overlap","open close","enter exit"],
+  "keywords": [
+    "timestamp",
+    "calculate overlap",
+    "open close",
+    "enter exit"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
