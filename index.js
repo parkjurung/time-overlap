@@ -2,6 +2,9 @@
  * Created by bagjuleong on 2016. 12. 13..
  */
 function cross(a, b) {
+  if(!(a&&b)){
+    return [];
+  }
   var result = [];
   var a_open = false;
   var b_open = false;
@@ -25,6 +28,9 @@ function cross(a, b) {
   return result;
 }
 function sum(a,b){
+    if(!(a&&b)){
+        return [];
+    }
   var result = [];
   var a_open = false;
   var b_open = false;
