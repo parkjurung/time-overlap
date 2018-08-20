@@ -68,6 +68,9 @@ function sumAll(){
 }
 function crossAll(){
   var result = [];
+  if(arguments.length <= 1) {
+    return [];
+  }
   for(var i = 0; i<arguments.length;i++){
     if(i===0){
       result = JSON.parse(JSON.stringify(arguments[i]));

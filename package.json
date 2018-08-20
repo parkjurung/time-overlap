@@ -19,7 +19,7 @@
   "author": "JurungPark <jurung@pplink.net>",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^2.5.2",
-    "jasmine-spec-reporter": "^2.7.0"
+    "jasmine": "^3.0.0",
+    "jasmine-spec-reporter": "^4.2.1"
   }
 }
