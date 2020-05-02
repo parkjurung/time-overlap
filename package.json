@@ -8,18 +8,22 @@
     "open close",
     "enter exit"
   ],
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/parkjurung/time-overlap"
   },
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "build": "tsc"
   },
   "author": "JurungPark <jurung@pplink.net>",
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^3.0.0",
-    "jasmine-spec-reporter": "^4.2.1"
+    "jasmine-spec-reporter": "^4.2.1",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
   }
 }

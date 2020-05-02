@@ -1,15 +1,15 @@
 /**
  * Created by bagjuleong on 2016. 12. 13..
  */
-function cross(a, b) {
+export function cross(a: number[], b: number[]): number[] {
   if(!(a&&b)){
     return [];
   }
-  var result = [];
-  var a_open = false;
-  var b_open = false;
-  var a_pointer = -1;
-  var b_pointer = -1;
+  const result = [];
+  let a_open = false;
+  let b_open = false;
+  let a_pointer = -1;
+  let b_pointer = -1;
   while (a_pointer < a.length && b_pointer < b.length) {
     if (a[a_pointer + 1] == b[b_pointer + 1] && b_open) { //for dot intersection
       a_pointer++;
@@ -27,15 +27,15 @@ function cross(a, b) {
   }
   return result;
 }
-function sum(a,b){
+export function sum(a: number[], b: number[]): number[] {
     if(!(a&&b)){
         return [];
     }
-  var result = [];
-  var a_open = false;
-  var b_open = false;
-  var a_pointer = -1;
-  var b_pointer = -1;
+  const result = [];
+  let a_open = false;
+  let b_open = false;
+  let a_pointer = -1;
+  let b_pointer = -1;
   while(a_pointer < a.length && b_pointer < b.length){
     // console.log('in while//','a.length:',a.length,'a_pointer:',a_pointer,'b.length:',b.length,'b_pointer:',b_pointer);
     if (a[a_pointer + 1] == b[b_pointer + 1] && !b_open) { //for dot intersection
@@ -54,47 +54,39 @@ function sum(a,b){
   }
   return result;
 }
-function sumAll(){
-  var result = [];
-  for(var i = 0; i<arguments.length;i++){
+export function sumAll(inputs: number[][]): number[] {
+  let result = [];
+  for(let i = 0; i < inputs.length; i++){
     if(i===0){
-      result = JSON.parse(JSON.stringify(arguments[i]));
+      result = JSON.parse(JSON.stringify(inputs[i]));
     }else{
-      result = sum(result,arguments[i]);
+      result = sum(result, inputs[i]);
     }
   }
   return result;
 
 }
-function crossAll(){
-  var result = [];
-  if(arguments.length <= 1) {
+export function crossAll(inputs: number[][]): number[] {
+  let result = [];
+  if(inputs.length <= 1) {
     return [];
   }
-  for(var i = 0; i<arguments.length;i++){
+  for(let i = 0; i<inputs.length;i++){
     if(i===0){
-      result = JSON.parse(JSON.stringify(arguments[i]));
+      result = JSON.parse(JSON.stringify(inputs[i]));
     }else{
-      result = cross(result,arguments[i]);
+      result = cross(result,inputs[i]);
     }
   }
   return result;
 }
 
-function integrate(a) {
+export function integrate(a: number[]): number {
   if (a.length % 2) return null;
 
-  var result = 0;
-  for (var i = 0; i < a.length; i += 2) {
+  let result = 0;
+  for (let i = 0; i < a.length; i += 2) {
     result += a[i + 1] - a[i];
   }
   return result;
 }
-exports.cross = cross;
-exports.crossAll = crossAll;
-exports.sum = sum;
-exports.sumAll = sumAll;
-exports.integrate = integrate;
-
-
-
