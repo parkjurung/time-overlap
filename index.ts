@@ -90,3 +90,12 @@ export function integrate(a: number[]): number {
   }
   return result;
 }
+export function overlap(arrays: number[][]): number[] {
+  const crosses = []; // n_C_2
+  for (let i = 0; i < arrays.length; i ++) {
+    for (let j = i + 1; j < arrays.length; j ++) {
+      crosses.push(cross(arrays[i], arrays[j]));
+    }
+  }
+  return sumAll.apply(this, crosses);
+}

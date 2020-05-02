@@ -107,4 +107,14 @@ function integrate(a) {
     return result;
 }
 exports.integrate = integrate;
+function overlap(arrays) {
+    var crosses = []; // n_C_2
+    for (var i = 0; i < arrays.length; i++) {
+        for (var j = i + 1; j < arrays.length; j++) {
+            crosses.push(cross(arrays[i], arrays[j]));
+        }
+    }
+    return sumAll.apply(this, crosses);
+}
+exports.overlap = overlap;
 //# sourceMappingURL=index.js.map
